@@ -54,6 +54,12 @@ class Magic(dict):
     def STARTSWITH(self, string):
         return self.RE('^' + string)
 
+    def ENDSWITH(self, string):
+        return self.RE(string + '$')
+
+    def CONTAINS(self, string):
+        return self.RE(string)
+
     def __repr__(self):
         """This is just to make ipython/pprint happy"""
         return dict.__repr__(self)
